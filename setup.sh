@@ -3,14 +3,7 @@
 # Streamlit setup script for Streamlit Cloud deployment
 mkdir -p ~/.streamlit/
 
-echo "\
-[general]\n\
-email = \"your-email@example.com\"\n\
-" > ~/.streamlit/credentials.toml
+echo "[general]\nemail = \"your-email@example.com\"" > ~/.streamlit/credentials.toml
 
-echo "\
-[server]\n\
-headless = true\n\
-enableCORS=false\n\
-port = \$PORT\n\
-" > ~/.streamlit/config.toml
+echo "[server]\nheadless = true\nenableCORS=false\nport = \$PORT" > ~/.streamlit/config.toml
+
