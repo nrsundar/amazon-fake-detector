@@ -130,7 +130,7 @@ A powerful tool for detecting potentially counterfeit Amazon products using AI t
 
 #### Method B: Amazon URL Analysis
 1. Go to the **"Amazon URL"** tab
-2. Paste a valid Amazon product URL (e.g., `https://www.amazon.com/dp/B0CHX1F2ZB`)
+2. Paste a valid Amazon product URL (e.g., `https://www.amazon.com/dp/B0D4QDHRTT`)
 3. Click **"Analyze Product"**
    - Note: Amazon's anti-bot protection may limit URL scraping
 
