@@ -17,7 +17,10 @@ from models.llm_loader import LLMLoader
 from backend.database import Database
 from backend.agent import ProductAnalysisAgent
 from backend.product_search import ProductSearch
-from backend.amazon_scraper import scrape_amazon_product, extract_sample_products
+from backend.amazon_scraper import (
+    get_amazon_product,
+    extract_sample_products,
+)
 
 # Set page configuration
 st.set_page_config(
@@ -274,8 +277,9 @@ def display_product_form():
                 
                 # Show loading message
                 with st.spinner("Fetching product details from Amazon..."):
-                    # Scrape product details from the URL
-                    product_data = scrape_amazon_product(amazon_url)
+                    # Retrieve product details using API if possible
+                    allow_scraping = os.getenv("ENABLE_SCRAPING") == "1"
+                    product_data = get_amazon_product(amazon_url, allow_scraping=allow_scraping)
                     
                     if not product_data:
                         st.error("Failed to extract product details from the URL. Please check the URL or try the manual entry method.")

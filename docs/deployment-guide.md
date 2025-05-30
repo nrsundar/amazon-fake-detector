@@ -163,4 +163,4 @@ After the database is created, you'll need to enable the pgvector extension:
 
    [Install]
    WantedBy=multi-user.target
-   
+

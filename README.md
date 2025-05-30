@@ -226,3 +226,18 @@ Try the application now: **[Amazon Fake Product Detector - Live Demo](https://b1
 
 *Experience the full AI-powered analysis with vector database search and agentic workflow in action.*
 
+## Amazon Product Advertising API (Optional)
+
+Set the following environment variables to use Amazon's Product Advertising API:
+- `AMAZON_ACCESS_KEY`
+- `AMAZON_SECRET_KEY`
+- `AMAZON_PARTNER_TAG`
+- `AMAZON_REGION` (optional, defaults to `us-east-1`)
+- Set `ENABLE_SCRAPING=1` to allow fallback to scraping
+
+When these variables are provided, the app retrieves product data via the official API.
+
+## Disclaimer
+
+This project is provided for educational purposes only and is not affiliated with Amazon. Scraping Amazon pages may violate Amazon's Terms of Service. Consider using the Amazon Product Advertising API for legitimate data retrieval.
+

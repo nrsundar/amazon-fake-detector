@@ -2,11 +2,14 @@
 Amazon product scraper module to extract product information from Amazon URLs.
 """
 
+import os
 import re
 import json
 import trafilatura
 from typing import Dict, Any, Optional
 from urllib.parse import urlparse, parse_qs
+
+from backend.amazon_api import fetch_product_via_api
 
 def extract_amazon_product_id(url: str) -> Optional[str]:
     """
@@ -127,6 +130,25 @@ def scrape_amazon_product(url: str) -> Optional[Dict[str, Any]]:
             'asin': "ERROR"
         }
 
+def get_amazon_product(url: str, allow_scraping: bool = False) -> Optional[Dict[str, Any]]:
+    """Fetch product details using Amazon's API when available.
+
+    If API credentials are configured, the Product Advertising API will be used.
+    If not and ``allow_scraping`` is ``True``, the function falls back to
+    scraping the product page.
+    """
+    asin = extract_amazon_product_id(url) or ""
+    product = None
+    if asin:
+        product = fetch_product_via_api(asin)
+        if product:
+            return product
+
+    if allow_scraping:
+        return scrape_amazon_product(url)
+
+    return None
+
 def extract_sample_products(urls: list[str]) -> list[Dict[str, Any]]:
     """
     Extract product details from multiple Amazon URLs.
@@ -140,7 +162,7 @@ def extract_sample_products(urls: list[str]) -> list[Dict[str, Any]]:
     products = []
     
     for url in urls:
-        product = scrape_amazon_product(url)
+        product = get_amazon_product(url, allow_scraping=True)
         if product:
             products.append(product)
             
