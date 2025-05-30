@@ -218,14 +218,6 @@ Update `config.yaml` with your specific settings:
 - LLM model preferences
 - Application settings
 
-## Project Structure
-
-## 🚀 Live Demo
-
-Try the application now: **[Amazon Fake Product Detector - Live Demo](https://b19501a0-5229-42e9-a9d6-bff8a5e8b0d6-00-un7115e0hxtr.picard.replit.dev/)**
-
-*Experience the full AI-powered analysis with vector database search and agentic workflow in action.*
-
 ## Amazon Product Advertising API (Optional)
 
 Set the following environment variables to use Amazon's Product Advertising API:
