@@ -1,0 +1,8 @@
+streamlit>=1.45.1
+pandas>=2.2.3
+psycopg2-binary>=2.9.10
+PyYAML>=6.0.2
+langchain>=0.3.25
+langchain-community>=0.3.24
+trafilatura>=2.0.0
+numpy>=1.24.0

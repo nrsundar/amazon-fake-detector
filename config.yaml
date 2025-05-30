@@ -1,0 +1,31 @@
+# Database configuration
+database:
+  host: ${PGHOST}
+  database: ${PGDATABASE}
+  user: ${PGUSER}
+  password: ${PGPASSWORD}
+  port: ${PGPORT}
+  connection_string: ${DATABASE_URL}
+
+# LLM configuration
+llm:
+  model_name: "llama3"  # Default model for Ollama
+  temperature: 0.1
+  max_tokens: 2048
+  top_p: 0.9
+
+# Embedding configuration
+embeddings:
+  model_name: "all-MiniLM-L6-v2"  # Local embedding model
+  dimension: 384
+
+# Application settings
+app:
+  title: "Amazon Fake Product Detector"
+  description: "Analyze product details to detect potentially counterfeit Amazon products"
+  version: "1.0.0"
+  
+# Agent configuration
+agent:
+  max_iterations: 5
+  fake_threshold: 0.7  # Score above this is considered potentially fake

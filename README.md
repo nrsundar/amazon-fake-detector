@@ -1,0 +1,161 @@
+# Amazon Fake Product Detector
+
+A powerful tool for detecting potentially counterfeit Amazon products using AI techniques and similarity analysis.
+
+## Features
+
+- **Amazon URL Analysis**: Directly analyze products by entering Amazon product URLs
+- **Manual Product Entry**: Enter product details manually for analysis
+- **Web Scraping**: Automatically extracts product information from Amazon pages
+- **Vector Search**: Uses PostgreSQL with pgvector for semantic similarity search
+- **Product Comparison**: Shows similar verified products for comparison
+- **Authenticity Scoring**: Provides quantitative authenticity assessment
+- **Live Data Import**: Import real product data from Amazon for comparison
+
+## Technology Stack
+
+- **Frontend**: Streamlit for interactive web interface
+- **Database**: PostgreSQL with pgvector extension for vector similarity search
+- **Web Scraping**: Trafilatura for extracting product data from Amazon
+- **Vector Embeddings**: Custom embedding model for text representation
+- **Analysis Engine**: LangChain-based analysis with simulated LLM responses
+
+## Quick Start
+
+### 1. Local Development
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/amazon-fake-detector.git
+   cd amazon-fake-detector
+   ```
+
+2. Install dependencies:
+   ```bash
+   pip install -r requirements_github.txt
+   ```
+
+3. Set up environment variables:
+   ```bash
+   export PGHOST=your_postgres_host
+   export PGDATABASE=your_database_name
+   export PGUSER=your_username
+   export PGPASSWORD=your_password
+   export PGPORT=5432
+   ```
+
+4. Run the application:
+   ```bash
+   streamlit run main.py
+   ```
+
+### 2. GitHub Hosting Setup
+
+Follow these steps to host your project on GitHub and deploy it:
+
+#### Step 1: Create GitHub Repository
+
+1. Go to [GitHub](https://github.com) and create a new repository
+2. Name it `amazon-fake-detector`
+3. Set it to public
+4. Don't initialize with README (we have one)
+
+#### Step 2: Upload Project Files
+
+Download these files from your Replit project:
+
+**Core Application Files:**
+- `main.py` - Main Streamlit application
+- `config.yaml` - Configuration file
+- `requirements_github.txt` - Python dependencies (rename to `requirements.txt`)
+
+**Model Files:**
+- `models/embedding_model.py` - Text embedding functionality
+- `models/llm_loader.py` - Language model simulation
+
+**Backend Files:**
+- `backend/database.py` - Database operations
+- `backend/agent.py` - Product analysis agent
+- `backend/product_search.py` - Product search functionality
+- `backend/amazon_scraper.py` - Amazon web scraping
+
+**Configuration Files:**
+- `prompts/fake_product_prompt.py` - Analysis prompts
+- `data/sample_products.csv` - Sample product data
+
+**Deployment Files:**
+- `.streamlit/config.toml` - Streamlit configuration
+- `.gitignore` - Git ignore rules
+- `runtime.txt` - Python version specification
+- `setup.sh` - Setup script for deployment
+
+#### Step 3: Push to GitHub
+
+```bash
+git init
+git add .
+git commit -m "Initial commit: Amazon Fake Product Detector"
+git branch -M main
+git remote add origin https://github.com/yourusername/amazon-fake-detector.git
+git push -u origin main
+```
+
+### 3. Deployment Options
+
+#### Option A: Streamlit Cloud (Free)
+
+1. Go to [share.streamlit.io](https://share.streamlit.io)
+2. Connect your GitHub account
+3. Select your repository
+4. Set the main file path: `main.py`
+5. Add environment variables in the Secrets section:
+   ```toml
+   PGHOST = "your_postgres_host"
+   PGDATABASE = "your_database_name"
+   PGUSER = "your_username"
+   PGPASSWORD = "your_password"
+   PGPORT = "5432"
+   ```
+
+#### Option B: Heroku
+
+1. Create a Heroku account
+2. Install Heroku CLI
+3. Create a new app: `heroku create your-app-name`
+4. Add PostgreSQL addon: `heroku addons:create heroku-postgresql:hobby-dev`
+5. Deploy: `git push heroku main`
+
+#### Option C: Railway
+
+1. Go to [railway.app](https://railway.app)
+2. Connect GitHub repository
+3. Add PostgreSQL database
+4. Set environment variables
+5. Deploy automatically
+
+## Usage
+
+1. **Initialize Database**: Click the button in the sidebar to set up database tables
+2. **Import Sample Data**: Use either CSV data or live Amazon data
+3. **Analyze Products**: 
+   - Use the "Amazon URL" tab to analyze by URL
+   - Use the "Manual Entry" tab for custom input
+4. **Review Results**: See authenticity scores, reasoning, and similar products
+
+## Database Setup
+
+For production deployment, you'll need a PostgreSQL database with pgvector extension:
+
+```sql
+CREATE EXTENSION vector;
+```
+
+## Configuration
+
+Update `config.yaml` with your specific settings:
+- Database connection details
+- LLM model preferences
+- Application settings
+
+## Project Structure
+
