@@ -4,21 +4,47 @@ A powerful tool for detecting potentially counterfeit Amazon products using AI t
 
 ## Features
 
+### Core Functionality
 - **Amazon URL Analysis**: Directly analyze products by entering Amazon product URLs
-- **Manual Product Entry**: Enter product details manually for analysis
-- **Web Scraping**: Automatically extracts product information from Amazon pages
-- **Vector Search**: Uses PostgreSQL with pgvector for semantic similarity search
-- **Product Comparison**: Shows similar verified products for comparison
-- **Authenticity Scoring**: Provides quantitative authenticity assessment
-- **Live Data Import**: Import real product data from Amazon for comparison
+- **Manual Product Entry**: Enter product details manually for comprehensive analysis
+- **Real-time Web Scraping**: Automatically extracts product information from Amazon pages using advanced scraping techniques
+- **Authenticity Scoring**: Provides quantitative authenticity assessment with detailed reasoning
+
+### Advanced AI Capabilities
+- **Agentic AI Workflow**: Uses LangChain to create an intelligent agent that orchestrates the entire analysis process
+- **Vector Database Search**: Employs PostgreSQL with pgvector extension for semantic similarity search across product databases
+- **Intelligent Product Comparison**: AI agent automatically finds and compares similar products to detect anomalies
+- **Multi-factor Analysis**: Agent considers price patterns, brand consistency, description quality, and similarity to known products
+
+### Data Intelligence Features
+- **Vector Embeddings**: Converts product descriptions into high-dimensional vectors for semantic understanding
+- **Similarity Detection**: Finds products with similar characteristics using cosine similarity in vector space
+- **Pattern Recognition**: Identifies suspicious pricing, description patterns, and brand inconsistencies
+- **Live Data Import**: Import and analyze real product data from Amazon for building comparison database
+
+### User Experience
+- **Interactive Dashboard**: Clean Streamlit interface with tabbed navigation
+- **Recent Analysis History**: Track previously analyzed products with verification status
+- **Detailed Reasoning**: AI agent provides clear explanations for authenticity decisions
+- **Visual Analytics**: Charts and metrics showing product comparison results
 
 ## Technology Stack
 
-- **Frontend**: Streamlit for interactive web interface
-- **Database**: PostgreSQL with pgvector extension for vector similarity search
-- **Web Scraping**: Trafilatura for extracting product data from Amazon
-- **Vector Embeddings**: Custom embedding model for text representation
-- **Analysis Engine**: LangChain-based analysis with simulated LLM responses
+### AI & Machine Learning
+- **Agentic AI**: LangChain-powered intelligent agent for autonomous product analysis
+- **Vector Database**: PostgreSQL with pgvector extension for high-performance semantic search
+- **Text Embeddings**: Advanced text vectorization for semantic understanding of product descriptions
+- **Pattern Analysis**: AI-driven detection of counterfeit product indicators
+
+### Data Processing
+- **Web Scraping**: Trafilatura for robust extraction of product data from Amazon
+- **Real-time Analysis**: Live processing of product information with immediate results
+- **Vector Operations**: Efficient similarity calculations using cosine distance in vector space
+
+### Infrastructure
+- **Frontend**: Streamlit for responsive web interface
+- **Database**: PostgreSQL with vector extension for scalable data storage
+- **Analysis Engine**: LangChain orchestration for complex AI workflows
 
 ## Quick Start
 
