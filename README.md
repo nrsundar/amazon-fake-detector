@@ -75,58 +75,7 @@ A powerful tool for detecting potentially counterfeit Amazon products using AI t
    streamlit run main.py
    ```
 
-### 2. GitHub Hosting Setup
-
-Follow these steps to host your project on GitHub and deploy it:
-
-#### Step 1: Create GitHub Repository
-
-1. Go to [GitHub](https://github.com) and create a new repository
-2. Name it `amazon-fake-detector`
-3. Set it to public
-4. Don't initialize with README (we have one)
-
-#### Step 2: Upload Project Files
-
-Download these files from your Replit project:
-
-**Core Application Files:**
-- `main.py` - Main Streamlit application
-- `config.yaml` - Configuration file
-- `requirements_github.txt` - Python dependencies (rename to `requirements.txt`)
-
-**Model Files:**
-- `models/embedding_model.py` - Text embedding functionality
-- `models/llm_loader.py` - Language model simulation
-
-**Backend Files:**
-- `backend/database.py` - Database operations
-- `backend/agent.py` - Product analysis agent
-- `backend/product_search.py` - Product search functionality
-- `backend/amazon_scraper.py` - Amazon web scraping
-
-**Configuration Files:**
-- `prompts/fake_product_prompt.py` - Analysis prompts
-- `data/sample_products.csv` - Sample product data
-
-**Deployment Files:**
-- `.streamlit/config.toml` - Streamlit configuration
-- `.gitignore` - Git ignore rules
-- `runtime.txt` - Python version specification
-- `setup.sh` - Setup script for deployment
-
-#### Step 3: Push to GitHub
-
-```bash
-git init
-git add .
-git commit -m "Initial commit: Amazon Fake Product Detector"
-git branch -M main
-git remote add origin https://github.com/yourusername/amazon-fake-detector.git
-git push -u origin main
-```
-
-### 3. Deployment Options
+### 2. Deployment Options
 
 #### Option A: Streamlit Cloud (Free)
 
@@ -182,6 +131,4 @@ Update `config.yaml` with your specific settings:
 - Database connection details
 - LLM model preferences
 - Application settings
-
-## Project Structure
 
