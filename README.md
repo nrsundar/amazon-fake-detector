@@ -2,6 +2,12 @@
 
 A powerful tool for detecting potentially counterfeit Amazon products using AI techniques and similarity analysis.
 
+## 🚀 Live Demo
+
+Try the application now: **[Amazon Fake Product Detector - Live Demo](https://replit.com/@sroctank4/workspace)**
+
+*Experience the full AI-powered analysis with vector database search and agentic workflow in action.*
+
 ## Features
 
 ### Core Functionality
@@ -108,14 +114,100 @@ A powerful tool for detecting potentially counterfeit Amazon products using AI t
 4. Set environment variables
 5. Deploy automatically
 
-## Usage
+## How to Test and Use
 
-1. **Initialize Database**: Click the button in the sidebar to set up database tables
-2. **Import Sample Data**: Use either CSV data or live Amazon data
-3. **Analyze Products**: 
-   - Use the "Amazon URL" tab to analyze by URL
-   - Use the "Manual Entry" tab for custom input
-4. **Review Results**: See authenticity scores, reasoning, and similar products
+### Step 1: Initial Setup
+1. **Access the Application**: Visit the live demo or run locally
+2. **Initialize Database**: Click "Initialize Database" in the sidebar to create necessary tables
+3. **Import Sample Data**: Click "Import Sample Data" to populate the database with comparison products
+
+### Step 2: Testing Product Analysis
+
+#### Method A: Manual Entry (Recommended for Testing)
+1. Navigate to the **"Manual Entry"** tab
+2. Enter product details:
+   ```
+   Title: Apple iPhone 15 Pro Max
+   Description: Latest iPhone with titanium design, A17 Pro chip, and advanced camera system
+   Price: 1199
+   Brand: Apple
+   ```
+3. Click **"Analyze Product"** to see the AI analysis
+
+#### Method B: Amazon URL Analysis
+1. Go to the **"Amazon URL"** tab
+2. Paste a valid Amazon product URL (e.g., `https://www.amazon.com/dp/B0CHX1F2ZB`)
+3. Click **"Analyze Product"**
+   - Note: Amazon's anti-bot protection may limit URL scraping
+
+### Step 3: Understanding Results
+
+#### Risk Indicator System
+The application displays a **color-coded risk assessment**:
+
+- **🟢 LOW RISK (0.0-0.3)**: Highly Authentic - Strong authenticity indicators
+- **🔵 MODERATE RISK (0.3-0.5)**: Likely Authentic - Minor concerns detected  
+- **🟡 ELEVATED RISK (0.5-0.7)**: Potentially Suspicious - Proceed with caution
+- **🟠 HIGH RISK (0.7-0.85)**: Likely Counterfeit - Strong risk indicators
+- **🔴 CRITICAL RISK (0.85-1.0)**: Highly Suspicious - Avoid this product
+
+#### Analysis Components
+1. **Authenticity Score**: Numerical risk assessment (0-1 scale)
+2. **Risk Level Badge**: Color-coded risk category
+3. **Progress Bar**: Visual representation of risk level
+4. **Detailed Reasoning**: AI explanation of the assessment
+5. **Similar Products**: Comparison with verified products in database
+
+### Step 4: Testing Different Scenarios
+
+#### Test Case 1: Authentic Product
+```
+Title: Apple MacBook Air M2
+Description: 13.6-inch Liquid Retina display, 8GB RAM, 256GB SSD
+Price: 1099
+Brand: Apple
+```
+*Expected: LOW to MODERATE risk level*
+
+#### Test Case 2: Suspicious Product
+```
+Title: Aple iPhone 15 Pro (note misspelling)
+Description: Cheap iPhone with all features
+Price: 99
+Brand: Aple
+```
+*Expected: HIGH to CRITICAL risk level*
+
+#### Test Case 3: Luxury Item Test
+```
+Title: Rolex Submariner Watch
+Description: Luxury Swiss watch with automatic movement
+Price: 500
+Brand: Rolex
+```
+*Expected: HIGH risk due to unusually low price*
+
+### Step 5: Interpreting AI Analysis
+
+The system evaluates products based on:
+- **Price Analysis**: Comparison with typical market prices
+- **Brand Consistency**: Spelling and authenticity of brand names
+- **Description Quality**: Professional vs. suspicious language patterns
+- **Similarity Matching**: Comparison with verified authentic products
+- **Pattern Recognition**: Detection of common counterfeit indicators
+
+### Troubleshooting
+
+**Common Issues:**
+- **URL Analysis Fails**: Use Manual Entry instead due to Amazon's anti-scraping measures
+- **No Similar Products Found**: Import sample data first to populate comparison database
+- **Database Errors**: Ensure PostgreSQL is properly configured with vector extension
+
+**Getting Accurate Results:**
+1. Always initialize the database before first use
+2. Import sample data to improve comparison accuracy
+3. Test with both obviously authentic and suspicious products
+4. Review the detailed reasoning to understand AI decision-making
 
 ## Database Setup
 
@@ -131,4 +223,6 @@ Update `config.yaml` with your specific settings:
 - Database connection details
 - LLM model preferences
 - Application settings
+
+## Project Structure
 
