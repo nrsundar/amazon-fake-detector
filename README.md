@@ -4,7 +4,7 @@ A powerful tool for detecting potentially counterfeit Amazon products using AI t
 
 ## 🚀 Live Demo
 
-Try the application now: **[Amazon Fake Product Detector - Live Demo](https://replit.com/@sroctank4/workspace)**
+Try the application now: **[Amazon Fake Product Detector - Live Demo]([https://replit.com/@sroctank4/workspace](https://b19501a0-5229-42e9-a9d6-bff8a5e8b0d6-00-un7115e0hxtr.picard.replit.dev/))**
 
 *Experience the full AI-powered analysis with vector database search and agentic workflow in action.*
 
